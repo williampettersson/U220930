@@ -6,7 +6,16 @@ const carsArray = new XMLHttpRequest();
 carsArray.open('GET', 'cars.json');
 carsArray.send();
 
-//const keys = JSON.parse(structure.responseText);
+
+structure.onload = () => {
+    const keys = JSON.parse(structure.responseText);
+
+    for (const key in keys) {
+        var header = document.createElement(key);
+        header.innerHTML = (keys[key]);
+        main.appendChild(header);
+    }
+}
 
 
 carsArray.onload = () => {
