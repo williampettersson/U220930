@@ -6,10 +6,10 @@ const carsArray = new XMLHttpRequest();
 carsArray.open('GET', 'cars.json');
 carsArray.send();
 
-const keys = JSON.parse(structure.responseText);
+//const keys = JSON.parse(structure.responseText);
 
 
-carList.onload = () => {
+carsArray.onload = () => {
     const cars = JSON.parse(carsArray.responseText);
 
     var list = document.createElement('ul');
